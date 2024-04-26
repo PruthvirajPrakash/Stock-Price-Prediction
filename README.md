@@ -47,23 +47,28 @@ These indicators help in interpreting complex market data and trends, making the
 # Features
 
 Numerical Features :
+
 The dataset comprises several numerical features crucial for the analysis and prediction of stock prices:
 
 Price-Related Features:
+
 Open, High, Low, Close: These represent the daily trading range of the stock. The Open and Close reflect the starting and final prices for the trading day, while the High and Low demonstrate the maximum and minimum prices during the day.
 Adjusted Close: This adjusts the closing price for the stock, taking into account any corporate actions such as dividends, splits, or rights offerings, hence providing a more accurate reflection of the stock's value.
 Volume: Represents the total number of shares traded during the day. High volume can indicate strong interest in the stock on a particular day and can be a sign of market sentiment towards a stock’s movement.
 
 Technical Indicators:
+
 EMA (Exponential Moving Average): Used to smooth out price data over a specified period, helping to identify longer-term trends by mitigating the effects of short-term fluctuations.
 
 Ichimoku Cloud Components:
+
 Tenkan-sen and Kijun-sen: Short-term and medium-term momentum indicators, respectively.
 Senkou Span A & B: Represent the edges of the "cloud," projecting potential support and resistance levels into the future.
 Chikou Span: Plots the closing price 26 periods back and can indicate potential areas of support or resistance from past prices.
 Keltner Channels: Consist of three lines that form a channel around the price, which help in identifying trend direction, breakouts, and volatility.
 
-Categorical Features
+Categorical Features :
+
 While the dataset is primarily numerical, it includes key categorical features that provide a temporal dimension to the analysis:
 
 Date: Captures the day of trading, which is essential for tracking price movements over time and analyzing trends or cycles in the stock market.
