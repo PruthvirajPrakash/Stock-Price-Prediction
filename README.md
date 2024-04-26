@@ -32,18 +32,21 @@ It is important to note that this dataset does not account for all market influe
 which could affect comprehensive market analysis.
 
 # Purpose of Selecting this Dataset
-Strategic Relevance
+Strategic Relevance: 
+
 The choice of Tata Motors stock data from Yahoo Finance is grounded in the objective to thoroughly analyze stock price movements and identify prevalent market trends.
 This data provides a detailed historical record, making it an excellent basis for building predictive models aimed at forecasting stock prices. Such models are valuable 
 tools for investors, aiding in informed decision-making regarding the buying and selling of stocks.
 
-# Predictive Modeling Goals
+Predictive Modeling Goals
+
 The primary goal of this project is to develop a robust predictive model that can forecast future stock prices based on historical data. 
 This involves leveraging technical indicators, such as Exponential Moving Average (EMA), Ichimoku Cloud, Keltner Channels, and Pivot Points, which are known to encapsulate underlying market sentiments and dynamics effectively. 
 These indicators help in interpreting complex market data and trends, making them indispensable for predictive analytics in finance.
 
 # Features
-Numerical Features
+
+Numerical Features :
 The dataset comprises several numerical features crucial for the analysis and prediction of stock prices:
 
 Price-Related Features:
