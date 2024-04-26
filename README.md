@@ -1,16 +1,16 @@
-Stock Price Prediction Project
+# Stock Price Prediction Project
 
-Project Overview
+# Project Overview
 This project aims to predict the stock price of the next day using historical data of Tata Motors (TATAMOTORS.NS) obtained from Yahoo Finance via the yfinance API. 
 The focus is on utilizing technical indicators and machine learning models to forecast future stock prices. 
 Predictions from this project can be utilized in algorithmic trading, investment planning, and risk management.
 
-Dataset Description
+# Dataset Description
 This dataset consists of historical stock data for Tata Motors (TATAMOTORS.NS) sourced from Yahoo Finance.
 It covers a period from January 1, 1999, to April 22, 2024, encompassing approximately 6300 trading days. 
 This extensive range allows for a deep analysis of stock trends and patterns over different market phases.
 
-Data Features
+# Data Features
 Date: The trading date.
 Open: The opening price of the stock for the trading day.
 High: The highest price of the stock during the trading day.
@@ -19,7 +19,7 @@ Close: The closing price of the stock at the end of the trading day.
 Adjusted Close: The closing price after adjustments for all applicable splits and dividend distributions.
 Volume: The number of shares traded during the trading day.
 
-Technical Indicators
+# Technical Indicators
 In addition to the basic stock price data, several technical indicators have been calculated and added to enhance the predictive capabilities:
 
 Exponential Moving Average (EMA): A type of moving average that places a greater weight and significance on the most recent data points.
@@ -31,18 +31,18 @@ Limitations
 It is important to note that this dataset does not account for all market influences that might impact stock prices. Macro-economic indicators, global financial events, political stability, and other external factors are not represented in this data,
 which could affect comprehensive market analysis.
 
-Purpose of Selecting this Dataset
+# Purpose of Selecting this Dataset
 Strategic Relevance
 The choice of Tata Motors stock data from Yahoo Finance is grounded in the objective to thoroughly analyze stock price movements and identify prevalent market trends.
 This data provides a detailed historical record, making it an excellent basis for building predictive models aimed at forecasting stock prices. Such models are valuable 
 tools for investors, aiding in informed decision-making regarding the buying and selling of stocks.
 
-Predictive Modeling Goals
+# Predictive Modeling Goals
 The primary goal of this project is to develop a robust predictive model that can forecast future stock prices based on historical data. 
 This involves leveraging technical indicators, such as Exponential Moving Average (EMA), Ichimoku Cloud, Keltner Channels, and Pivot Points, which are known to encapsulate underlying market sentiments and dynamics effectively. 
 These indicators help in interpreting complex market data and trends, making them indispensable for predictive analytics in finance.
 
-Features
+# Features
 Numerical Features
 The dataset comprises several numerical features crucial for the analysis and prediction of stock prices:
 
@@ -66,7 +66,7 @@ While the dataset is primarily numerical, it includes key categorical features t
 Date: Captures the day of trading, which is essential for tracking price movements over time and analyzing trends or cycles in the stock market.
 Weekday: Extracted from the Date, this feature allows for the analysis of weekly patterns in stock price movements, such as variations in volatility or trading volume that might occur on specific days of the week.
 
-Process Overview
+# Process Overview
 The development of this project was methodically structured into distinct steps to ensure effective analysis and precise predictions of Tata Motors' stock prices for the next day. Here's a detailed step-by-step overview of the process:
 
 Step 1: Data Collection
@@ -94,7 +94,7 @@ Step 6: Deployment and Monitoring
 Integration: Integrated the final model into a simulated trading environment to test its real-time capabilities.
 Monitoring: Established continuous monitoring to track the model’s performance over time, making necessary adjustments based on feedback and market changes.
 
-Outputs and Visualizations
+# Outputs and Visualizations
 This project generates several outputs and visualizations that illustrate the underlying trends and patterns in the stock price data of Tata Motors. Here are the key elements:
 
 Data Tables
@@ -116,7 +116,7 @@ CSV Files:
 Tatastockdfset.csv: Contains the raw downloaded data.
 enhanced_features.csv: Includes the processed data with additional technical indicators, ready for further analysis or model training.
 
-Setup and Model Accuary 
+# Setup and Model Accuary 
 1. The code starts by downloading stock price data for Tata Motors from Yahoo Finance, covering dates from January 1, 1999, to April 24, 2024.
 The fetched data is saved into a CSV file named Tatastockdfset.csv.
 ![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/166566162/abe6cb36-c2eb-4c8b-9211-86c10f7cc2ce)
@@ -182,7 +182,7 @@ y = df[["Open", "Close", "High", "Low"]]
     The MAE of 38.49 means the average prediction error is somewhat higher, and with an R-squared of 0.803, about 80.3% of the variance in the stock prices is being explained. This suggests that while the model is still performing well,
     it isn’t capturing as much of the variability as the Gradient Boosting model.
 
-Conclusion:
+# Conclusion:
 
 The GradientBoostingRegressor outperforms the RandomForestRegressor in this scenario, with more accurate predictions and a better ability to explain the variation in stock prices.
 The results suggest that boosting techniques, which focus on reducing bias and variance in sequential corrections of predictions, may be more suited to this particular problem of stock price prediction compared to the bagging approach used in RandomForest.
