@@ -155,7 +155,7 @@ The dataframe is then saved with these new features to enhanced_features.csv.
    X = df.drop(["Open", "Close", "High", "Low"], axis=1)
 
    Creating the target set y with specified columns
-   y = df[["Open", "Close", "High", "Low"]]
+   y = df[["Open", "Close", "High", "Low"]]  
 
 7. The data is split into training and test sets using train_test_split with 20% of the data reserved for testing.
    This function is used with shuffle=False to preserve the time series nature of the data, ensuring that future data isn't inadvertently used in the training process.
