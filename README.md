@@ -151,18 +151,18 @@ The dataframe is then saved with these new features to enhanced_features.csv.
 
 6. Choosing feature set X and target set Y
 
-Dropping specified columns to create the feature set X
-X = df.drop(["Open", "Close", "High", "Low"], axis=1)
+   Dropping specified columns to create the feature set X
+   X = df.drop(["Open", "Close", "High", "Low"], axis=1)
 
-Creating the target set y with specified columns
-y = df[["Open", "Close", "High", "Low"]]
+   Creating the target set y with specified columns
+   y = df[["Open", "Close", "High", "Low"]]
 
 7. The data is split into training and test sets using train_test_split with 20% of the data reserved for testing.
    This function is used with shuffle=False to preserve the time series nature of the data, ensuring that future data isn't inadvertently used in the training process.
 
-8. TimeSeriesSplit is initialized with 5 splits, tailored for time series data. This ensures that each test set in the cross-validation is strictly ahead in time compared to the training set.
+8. TimeSeriesSplit is initialized with 5 splits, tailored for time series data. This ensures that each test set in the cross-validation is strictly ahead in time compared      to the training set.
 
-9. Models: Two types of regressors, GradientBoostingRegressor and RandomForestRegressor, are wrapped in MultiOutputRegressor to handle multi-output regression tasks, allowing them to predict multiple dependent variables (like open, close, high, and low prices) simultaneously.
+9. Models: Two types of regressors, GradientBoostingRegressor and RandomForestRegressor, are wrapped in MultiOutputRegressor to handle multi-output regression tasks,           allowing them to predict multiple dependent variables (like open, close, high, and low prices) simultaneously.
 
 10. Parameter Grids: Specific parameters are set for each model to be tuned using GridSearchCV.
 
@@ -170,7 +170,7 @@ y = df[["Open", "Close", "High", "Low"]]
 
     For the RandomForest Regressor, the number of trees and the number of features to consider when looking for the best split are set to vary.
 
-11. We fitted models using GridSearchCV and store best models.  (GridSearchCV is a systematic way to search through multiple combinations of parameter tunes, cross-validating as it goes to determine which tune gives the best performance. to prevent overfittiing and bias.
+11. We fitted models using GridSearchCV and store best models.  (GridSearchCV is a systematic way to search through multiple combinations of parameter tunes, cross-             validating as it goes to determine which tune gives the best performance. to prevent overfittiing and bias.
     GridSearchCV is used with a TimeSeriesSplit to fine-tune the models' hyperparameters and validate their performance using time-based cross-validation. )
 
 12. Last comes the model evaulation.
@@ -179,7 +179,7 @@ y = df[["Open", "Close", "High", "Low"]]
     Mean Absolute Error: 30.027629130229613
     R-squared: 0.8477301075779412
 
-    The GradientBoostingRegressor did perform well with a lower MAE and a higher R-squared value. An MAE of 30.03 indicates on average the predictions of the model are about 30.03 units away from the actual stock prices.
+    The GradientBoostingRegressor did perform well with a lower MAE and a higher R-squared value. An MAE of 30.03 indicates on average the predictions of the model are          about 30.03 units away from the actual stock prices.
     The R-squared value of 0.848, which is quite close to 1, suggests that approximately 84.8% of the variance in the stock prices is predictable from the features.
 
     RandomForestRegressor:
@@ -187,7 +187,7 @@ y = df[["Open", "Close", "High", "Low"]]
     R-squared: 0.8032208244628982
 
     The RandomForestRegressor shows a higher MAE and a lower R-squared compared to the GradientBoostingRegressor.
-    The MAE of 38.49 means the average prediction error is somewhat higher, and with an R-squared of 0.803, about 80.3% of the variance in the stock prices is being explained. This suggests that while the model is still performing well,
+    The MAE of 38.49 means the average prediction error is somewhat higher, and with an R-squared of 0.803, about 80.3% of the variance in the stock prices is being             explained. This suggests that while the model is still performing well,
     it isn’t capturing as much of the variability as the Gradient Boosting model.
 
 # Conclusion:
