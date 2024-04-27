@@ -105,10 +105,13 @@ R2 Score for Low: 0.8430
 **2 prediction examples which are for next 2 days Predicition**
 New values Example 1
 Results:
+
 ![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/90a291d0-ca77-44fe-a233-03791808cbec)
 
 New value Example 2
 Results:
+
+
 ![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/8abda6c1-d365-40ca-8f33-a3b7ba11de16)
 
 
