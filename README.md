@@ -1,147 +1,102 @@
-#Group Names: Sai babu patarlapalli , Pruthvi Raj p
-
 **Dataset Description**
-The dataset used in this script is historical stock market data, specifically for the stock ticker "TATAMOTORS.NS". This likely represents Tata Motors Limited traded on the National Stock Exchange of India. The data is fetched using the yfinance library, which accesses Yahoo Finance to download stock price information. .
+ The dataset may have been collected from medical records or a health survey.
 
-**Fields in the Dataset**
-The standard fields in stock market data from Yahoo Finance typically include:
+Fields
+The dataset includes various symptom-related fields such as:
 
-Date: The date for the stock data point.
-Open: The opening price of the stock on that day.
-High: The highest price of the stock on that day.
-Low: The lowest price of the stock on that day.
-Close: The closing price of the stock when the market closes.
-Adj Close: The adjusted closing price, which accounts for any corporate actions such as dividends, stock splits, etc.
-Volume: The number of shares traded during the day.
-Utility of the Dataset
-This dataset is particularly useful for building predictive models to estimate future stock prices based on historical patterns. Understanding stock price trends helps in making informed investment decisions, aiding traders and financial analysts in assessing potential risks and returns.
+itching
+skin_rash
+nodal_skin_eruptions
+continuous_sneezing
+shivering
+chills
+joint_pain
+stomach_pain
+acidity
+ulcers_on_tongue
+It also includes a field named prognosis, which is used as the target variable for predictions. This field likely contains the diagnosis or the outcome that corresponds to the combination of symptoms.
 
-**Prediction Objective**
-The script aims to predict the future prices of Tata Motors stock, specifically the Open, Close, High, and Low prices for the next day. 
-
-These predictions could be beneficial in several ways:
-Investment Strategy
-Portfolio Management
+Purpose and Utility
+The primary utility of this dataset appears to be in developing predictive models to diagnose medical conditions based on symptom data. This could be incredibly useful in healthcare settings to assist in preliminary diagnosis or in triage systems to direct patients to the appropriate care based on their symptoms.
 
 **EDA**
-TATA Motors has demonstrated strong performance in the automotive sector due to several factors. Firstly, its diverse product portfolio spanning passenger vehicles, commercial vehicles, and electric vehicles caters to a wide range of consumer needs. Secondly, strategic partnerships and collaborations, such as those with Jaguar Land Rover, have enabled access to advanced technology and global markets.
-![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/0951259c-21dd-4aad-8893-4e09509d8b20)
 
-Comparing with Technical Indicator
-
-EMA, in particular, helps traders and analysts identify the trend direction and can sometimes act as a support or resistance level. The chart covers a period from around the year 2000 to 2024
-
-![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/4c37f12d-bd74-4937-9454-caad09c20d37)
+Frequency Vs Symptoms
 
 
+![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/3c2fd917-4e5e-4a9b-8191-df142933fb9a)
 
-**X Variables (Features)**
-Technical Indicators:
-VWAP (Volume Weighted Average Price): Reflects the average price weighted by volume.
-EMA (Exponential Moving Average): Indicates trends over different periods.
-RSI (Relative Strength Index): Measures the speed and change of price movements.
-MACD (Moving Average Convergence Divergence): Shows the relationship between two moving averages of the stock's price.
-Lagged Features:
-Close_lag_n: Previous n days' closing prices.
-Adj_Close_lag_n: Previous n days' adjusted closing prices.
-Volume_lag_n: Previous n days' trading volumes.
-Daily Price Changes:
-Daily_Change: Percentage change in closing price from the previous day.
-Adj_Daily_Change: Adjusted closing price percentage change from the previous day.
-**Y Variables (Targets)**
-Open: The opening price of the stock on that day.
-High: The highest price of the stock on that day.
-Low: The lowest price of the stock on that day.
-Close: The closing price of the stock when the market closes
-**Correlation**
-Lag features are strongly corelated with high low and open and close
-![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/473a69cb-bc48-4f7a-b636-13b63da41016)
-**Feature importance**
-All features for X are used excpet Date
-Case:
-Comprehensive Information: By utilizing all available features, we ensure that our model considers a wide range of information related to the stock's performance.
-Potential Interactions: Allowing the model to access a variety of features enables it to capture potential interactions and nonlinear relationships among variables, which could contribute to better predictive performance.
+**Corelation plot**
 
-**##Model Fitting**
-**Train / test splitting**
-the train and test indices for the last fold (i.e., the fifth split) using list(tscv.split(X_scaled))[-1]. This ensures that the test set contains the most recent data, which is crucial for evaluating the model's predictive performance.
 
-![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/6745512d-eb5b-4658-b680-ecb4083a090c)
- 
- **Risk of data leakage**
-Target Leakage Risk: 
-Lag features and daily price changes are calculated with future information, potentially causing the model to learn from data not available at prediction time.
-Train-Test Contamination Risk:
-Train-test contamination may occur due to the use of StandardScaler before splitting the data into train and test sets.
-**Prevent Data Leakage Happening**
-To prevent data leakage:
-Feature engineering and preprocessing were performed before train/test splitting.
-TimeSeriesSplit was utilized for sequential train/test splitting, preserving temporal order.
-This ensures model evaluation on unseen future data, minimizing the risk of leakage.
-**Model Selection**
-Random Forest Regressor was selected as the model of choice due to its ensemble nature, which handles non-linearity and high dimensionality well. 
+![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/07f86473-f9ce-43cd-a0db-1c0b4fd2ecd5)
 
-The Gradient Boosting Regressor, particularly suitable for time series data, was employed for its sequential learning nature, effectively capturing temporal dependencies. Through GridSearchCV.
-**Hyper parameter selection**
-The hyperparameter selection process involved utilizing GridSearchCV, iterating over a predefined parameter grid, including `n_estimators`, `max_depth`, and `min_samples_split`, employing cross-validation (cv=3) to optimize performance. This allowed for robust model tuning while preventing overfitting and ensuring generalizability across multiple target variables in a time series context.
 
-![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/839caf70-4a16-438b-8637-6b7e366aac3d)
+
+**Features and Target Variables**
+
+X Variables (Features)
+Itching, skin_rash, nodal_skin_eruptions, continuous_sneezing, shivering, chills, joint_pain.
+Y Variable (Target)
+y is the target variable, which in this case is the prognosis.
+
+
+**Feature Engineering:**
+Feature engineering to selecting relevant features and dropping others
+
+**Model Selecting**
+Two models were selected: a Decision Tree Classifier and a Random Forest Classifier. The Decision Tree was chosen for its simplicity and interpretability, useful for understanding the impact of individual features on the diagnosis. The Random Forest was chosen for its robustness and better generalization, as it reduces overfitting by averaging multiple decision trees. These models are often effective for classification tasks with structured data like symptoms and diagnosis.
+
+**Model Fitting & Train/Test Splitting**
+Split of training and testing data using train_test_split with a typical random allocation. For the Decision Tree model, a test size of 20% was chosen, and for the Random Forest, it was 40%, likely to validate model robustness.
+**Data Leakage Risks**: 
+There's no specific handling of data leakage evident,
+**Model Selection & Hyperparameter Tuning:**
+Decision Tree and Random Forest classifiers were selected, presumably for their efficacy in handling categorical and non-linear relationships in data. 
 
 **Validation / metrics**
-For Random Forest Model next day predection R-square
 
-R2 Score for Open: 0.8634 
-R2 Score for Close: 0.8453
-R2 Score for High: 0.8540
-R2 Score for Low: 0.8566 
-
-![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/65d6d4b2-ea15-45ac-906c-13877e7498a7)
-
-For GradientBoostingRegressor next day prediction R-square
-R2 Score for Open: 0.8621 
-R2 Score for Close: 0.8323 
-R2 Score for High: 0.8449 
-R2 Score for Low: 0.8430
-
-![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/9a294634-57be-42a8-976a-565fccf437b7)
+DecisionTreeClassifier
 
 
-**2 prediction examples which are for next 2 days Predicition**
-Example 1
-Results:
-
-![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/90a291d0-ca77-44fe-a233-03791808cbec)
-
-Example 2
-Results:
+![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/4db5d7c1-de5d-4210-a789-ed50b75a35af)
 
 
-![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/8abda6c1-d365-40ca-8f33-a3b7ba11de16)
+Randomforest
 
+RandomForestClassifier
+
+
+![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/b32566cb-7ea6-4bd9-8c59-f5801e415b7c)
 
 **Production**
-Deployment of use of this model
-Creating a API,it might usefull for Investemnet starategy
-Scalability: Design the deployment architecture to handle scalability requirements, especially if there's a need to process large volumes of data or serve a high number of concurrent users.
-Monitoring and Logging: Implement robust monitoring and logging mechanisms to track model performance, input data quality, and any potential errors or anomalies during inference.
 
-Outline precautions about its use here
-Regular Model Updates: Continuously update the model with fresh data to ensure its predictions remain accurate and relevant over time.
-Monitoring and Evaluation: Implement a monitoring system to detect any performance degradation or drift in model predictions. Regularly evaluate model 
+**Advice for Deployment:**
+The model should be deployed into a clinical decision support system with an intuitive interface that allows healthcare professionals to input symptoms and receive diagnostic predictions. It’s essential to maintain, update, and monitor the model's performance continuously to ensure reliability.
 
- **To enhance the future  model performance**
- Get more data in future and also the model can be intergarted well with sentiment analysis using NLP techniques.
+**Precautions about its Use**:
+It's crucial to provide clear disclaimers about the model's limitations and ensure it is used as an aid, not a replacement for professional medical diagnosis.
+The potential for misdiagnoses should be mitigated by involving healthcare professionals in the validation process of diagnoses offered by the model.
+
+**Going Further**
+
+Improvements for the Model:
+Enhancing the model could involve collecting more varied data from a broader patient demographic to improve its generalizability. Including additional features such as patient history, lifestyle factors, and genetic information could provide a more holistic view and improve diagnostic accuracy.
+
+**Technological Enhancements:**
+Applying more robust machine learning techniques like ensemble methods.
+Improve model by using advanced scaling methods.
+
+
+
+
+
+
+
+
+
+
+
+
+
  
-
-
-
-
-
-
-
-
-
-
-
-
-
