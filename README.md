@@ -29,7 +29,9 @@ Frequency Vs Symptoms
 **Corelation plot**
 
 
-![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/07f86473-f9ce-43cd-a0db-1c0b4fd2ecd5)
+
+![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/b0c8076f-0ffe-44a3-9e72-18000efef89a)
+
 
 
 
