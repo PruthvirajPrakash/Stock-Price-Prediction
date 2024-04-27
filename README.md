@@ -1,4 +1,6 @@
+#Group Names: Sai babu patarlapalli , Pruthvi Raj p
 # Stock Price Prediction Project
+
 
 # Project Overview
 This project aims to predict the stock price of the next day using historical data of Tata Motors (TATAMOTORS.NS) obtained from Yahoo Finance via the yfinance API. 
@@ -20,16 +22,11 @@ Adjusted Close: The closing price after adjustments for all applicable splits an
 Volume: The number of shares traded during the trading day.
 
 # Technical Indicators
-In addition to the basic stock price data, several technical indicators have been calculated and added to enhance the predictive capabilities:
-
-Exponential Moving Average (EMA): A type of moving average that places a greater weight and significance on the most recent data points.
-Ichimoku Cloud: A collection of technical indicators that show support and resistance levels, as well as momentum and trend direction.
-Keltner Channels: A volatility indicator that shows a central moving average line plus channel lines at a distance above and below.
-Pivot Points: A technical analysis indicator used to determine the overall trend of the market over different time frames.
-
-Limitations
-It is important to note that this dataset does not account for all market influences that might impact stock prices. Macro-economic indicators, global financial events, political stability, and other external factors are not represented in this data,
-which could affect comprehensive market analysis.
+VWAP (Volume Weighted Average Price): This indicator is calculated by taking the cumulative sum of the product of 'Close' prices and 'Volume', divided by the cumulative sum of 'Volume'. It reflects the average price a security has traded at throughout the day, based on both price and volume.
+EMA (Exponential Moving Average): The code computes the EMA for a specified period (20 days in this case) using the 'Close' prices. EMA gives more weight to recent prices and reacts faster to price changes than a simple moving average (SMA).
+RSI (Relative Strength Index): A momentum oscillator that measures the speed and change of price movements on a scale of zero to 100. The code first calculates the daily changes in 'Close' price, determines gains and losses, averages them over a 14-day period, and then computes the RSI.
+MACD (Moving Average Convergence Divergence): This is a trend-following momentum indicator, shown by subtracting the 26-period EMA of the 'Close' price from the 12-period EMA. The result is the MACD line, and a 9-period EMA of the MACD line (Signal Line) is also computed, which acts as a trigger for buy and sell signals.
+****lag features** and Daily price change** for stock price data and computes daily percentage changes. Specifically, it creates three sets of lagged data for 'Close', 'Adj Close', and 'Volume', shifting these columns by up to three days backward. Additionally, it calculates the daily percentage change for both the 'Close' and 'Adj Close' prices, multiplying these changes by 100 to express them as percentages. 
 
 # Purpose of Selecting this Dataset
 Strategic Relevance: 
