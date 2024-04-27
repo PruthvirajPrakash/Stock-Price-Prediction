@@ -62,6 +62,10 @@ R2 Score for High: 0.8540
 R2 Score for Low: 0.8566
 
 
+![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/b27ec549-014c-474b-8a41-c3d4ff501de2)
+
+
+
 
 
 
