@@ -94,6 +94,7 @@ R2 Score for Open: 0.8634
 R2 Score for Close: 0.8453
 R2 Score for High: 0.8540
 R2 Score for Low: 0.8566 
+
 ![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/65d6d4b2-ea15-45ac-906c-13877e7498a7)
 
 For GradientBoostingRegressor next day prediction R-square
@@ -101,7 +102,10 @@ R2 Score for Open: 0.8621
 R2 Score for Close: 0.8323 
 R2 Score for High: 0.8449 
 R2 Score for Low: 0.8430
+
 ![image](https://github.com/PruthvirajPrakash/Stock-Price-Prediction/assets/152721488/9a294634-57be-42a8-976a-565fccf437b7)
+
+
 **2 prediction examples which are for next 2 days Predicition**
 New values Example 1
 Results:
